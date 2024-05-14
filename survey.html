@@ -96,7 +96,7 @@
 <nav id="leftMenu" class="navmenu navmenu-default navmenu-inverse navmenu-fixed-left offcanvas" role="navigation">
 	<ul class="nav navmenu-nav">
         <li role="presentation" class="  ">
-            <a href="lapor.html" >
+            <a href="pengaduan.html" >
     Pengaduan!
 </a>
 
@@ -110,6 +110,12 @@
     <li role="presentation" class="  ">
         <a href="survey.html" >
 <u>Survey!</u>
+</a>
+
+</li>
+<li role="presentation" class="  ">
+    <a href="index.html" >
+<u>Logout!</u>
 </a>
 
 </li>
@@ -151,7 +157,9 @@
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-left navbar-primary">
                 <li role="presentation" class="  ">
-                    <a href="#" >LAPOR Diskominfotik Sumbar  </a>
+                    <a href="#" class="modalTrigger" data-toggle="modal" data-target="#modalPengaduan">
+                        LAPOR Diskominfotik Sumbar
+                    </a>
                 </li>
 				            
                     							</ul>
@@ -164,7 +172,7 @@
 			<ul class="nav navbar-nav navbar-right ">
 
                 <li class="nav-login">
-					<a href="lapor.html" data-toggle="" data-target="#">PENGADUAN!</a>
+					<a href="pengaduan.html" data-toggle="" data-target="#">PENGADUAN!</a>
 				</li>
 				
 								<li class="nav-login">
@@ -618,90 +626,100 @@
     });
 
     $(document).ready(function() {
-        getCat = GetURLParameter('category');
-        $( ".complaint-form #submit-complaint" ).click(function() {
-            button_submit = $(this);
-            button_submit.addClass('oc-loading');
-            $('#select_categories').attr('disabled', false);
-            if(
-                $('.complaint-form [name=classification_id]:checked').val() &&
-                $('.complaint-form [name=title]').val() &&
-                $('.complaint-form [name=content]').val() &&
-                $('.complaint-form [name=location_id]').val()
-            ){
-                $.ajax({
-                    url : 'https://www.lapor.go.id/api/v3/complaints/check_similarity',
-                    method : 'POST',
-                    data : {
-                        content: $('.complaint-form [name=content]').val(),
-                        user_id: '',
-                    },
-                    success:function(result){
-                        if(result.status_code==1){
-                            html_text = '';
-                            html_text += 'Anda tidak perlu membuat laporan baru dan bisa melanjutkan proses aduan<br><br>' +
-                                    '<div class="content-data"><b>ID Laporan</b>: #'+ result.data.id +' <br><b>Judul Laporan</b>: '+ result.data.title +' <br>' +
-                                    '<b>Status</b>: '+ result.data.status_name;
-                            if(result.data.status_description){
-                                html_text += '<br><b>Deskripsi</b>: '+ result.data.status_description;
-                            }
-                            if(result.data.pending_status){
-                                html_text += '<br><b>Alasan</b>: '+ result.data.pending_status +'<br>';
-                            }
-                            html_text += '</div>';
-                            Swal.fire({
-                                title: '<strong>Laporan Serupa Milik Anda Sudah Ada</strong>',
-                                imageUrl: 'https://www.lapor.go.id/themes/lapor/assets/images/complaint-exist.png',
-                                html: html_text,
-                                showCloseButton: true,
-                                showCancelButton: true,
-                                focusConfirm: false,
-                                showClass: {
-                                    popup: 'complaint-already-exist'
-                                },
-                                confirmButtonText:
-                                    'Lanjutkan Laporan',
-                                confirmButtonAriaLabel: 'Lanjutkan Laporan',
-                                cancelButtonText:
-                                    'Batalkan',
-                                cancelButtonAriaLabel: 'Batalkan',
-                                reverseButtons: true
-                            }).then((button) => {
-                                if (button.isConfirmed) {
-                                    window.location = 'https://www.lapor.go.id/'+result.data.id;
-                                }
-                            });
-                            button_submit.removeClass('oc-loading');
-                        } else {
-                            $(".complaint-form").submit();
-                            button_submit.removeClass('oc-loading');
+    getCat = GetURLParameter('category');
+    $(".complaint-form #submit-complaint").click(function() {
+        button_submit = $(this);
+        button_submit.addClass('oc-loading');
+        $('#select_categories').attr('disabled', false);
+        if (
+            $('.complaint-form [name=classification_id]:checked').val() &&
+            $('.complaint-form [name=title]').val() &&
+            $('.complaint-form [name=content]').val() &&
+            $('.complaint-form [name=location_id]').val()
+        ) {
+            $.ajax({
+                url: 'https://www.lapor.go.id/api/v3/complaints/check_similarity',
+                method: 'POST',
+                data: {
+                    content: $('.complaint-form [name=content]').val(),
+                    user_id: '',
+                },
+                success: function(result) {
+                    if (result.status_code == 1) {
+                        html_text = '';
+                        html_text += 'Anda tidak perlu membuat laporan baru dan bisa melanjutkan proses aduan<br><br>' +
+                            '<div class="content-data"><b>ID Laporan</b>: #' + result.data.id + ' <br><b>Judul Laporan</b>: ' + result.data.title + ' <br>' +
+                            '<b>Status</b>: ' + result.data.status_name;
+                        if (result.data.status_description) {
+                            html_text += '<br><b>Deskripsi</b>: ' + result.data.status_description;
                         }
-                        if(getCat){
-                            $('#select_categories').attr('disabled', 'disabled');
+                        if (result.data.pending_status) {
+                            html_text += '<br><b>Alasan</b>: ' + result.data.pending_status + '<br>';
                         }
-                    },
-                    error: function (error) {
+                        html_text += '</div>';
+                        Swal.fire({
+                            title: '<strong>Laporan Serupa Milik Anda Sudah Ada</strong>',
+                            imageUrl: 'https://www.lapor.go.id/themes/lapor/assets/images/complaint-exist.png',
+                            html: html_text,
+                            showCloseButton: true,
+                            showCancelButton: true,
+                            focusConfirm: false,
+                            showClass: {
+                                popup: 'complaint-already-exist'
+                            },
+                            confirmButtonText: 'Lanjutkan Laporan',
+                            confirmButtonAriaLabel: 'Lanjutkan Laporan',
+                            cancelButtonText: 'Batalkan',
+                            cancelButtonAriaLabel: 'Batalkan',
+                            reverseButtons: true
+                        }).then((button) => {
+                            if (button.isConfirmed) {
+                                window.location = 'https://www.lapor.go.id/' + result.data.id;
+                            }
+                        });
+                        button_submit.removeClass('oc-loading');
+                    } else {
+                        $(".complaint-form").submit();
+                        button_submit.removeClass('oc-loading');
+                        Swal.fire({
+                            title: 'Survey Telah Dikirim ke Diskominfotik',
+                            icon: 'success',
+                            confirmButtonText: 'OK'
+                        });
                     }
-                });
-            } else {
-                $(".complaint-form").submit();
-                button_submit.removeClass('oc-loading');
-            }
-        });
-        $("#select_categories").select2ToTree({
-            treeData: {dataArr: mydata},
-            allowClear: true,
-            placeholder: "Pilih Kategori Laporan Anda",
-            positionDropdown: true,
-            autoClose: false,
-        });
-        $('#select_categories').val('').change();
-        if(getCat){
-            $('#select_categories').val(getCat);
-            $('#select_categories').trigger('change');
-            $('#select_categories').attr('disabled', 'disabled');
-        };
+                    if (getCat) {
+                        $('#select_categories').attr('disabled', 'disabled');
+                    }
+                },
+                error: function(error) {
+                    button_submit.removeClass('oc-loading');
+                }
+            });
+        } else {
+            $(".complaint-form").submit();
+            button_submit.removeClass('oc-loading');
+            Swal.fire({
+                title: 'Survey Telah Dikirim ke Diskominfotik',
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
     });
+    $("#select_categories").select2ToTree({
+        treeData: { dataArr: mydata },
+        allowClear: true,
+        placeholder: "Pilih Kategori Laporan Anda",
+        positionDropdown: true,
+        autoClose: false,
+    });
+    $('#select_categories').val('').change();
+    if (getCat) {
+        $('#select_categories').val(getCat);
+        $('#select_categories').trigger('change');
+        $('#select_categories').attr('disabled', 'disabled');
+    };
+});
+
 </script>                
                 	        </div>
             <div class="col-sm-12">
@@ -988,101 +1006,7 @@
 </script>
 
         
-        <form method="POST" action="https://www.lapor.go.id" accept-charset="UTF-8" data-request="laporAuth::onSignin" data-request-update="&#039;captcha-login&#039;: &#039;#google-captcha&#039;"><input name="_session_key" type="hidden" value="NjoIsGfq4ONipPrHvoKT1h9f0OyLNCH4u2l9hBzJ"><input name="_token" type="hidden" value="FUYn2whwXsqgfnpZaqrafSPmMxlHGCy8oRDh76wV">
-    <div class="modal fade" id="modalLogin">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title text-center">MASUK</h4>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h5 class="separator"><span>Gunakan Akun Media Sosial Anda</span></h5>
-<div class="row">
-    <div class="col-sm-6">
-        <a href="https://www.lapor.go.id/flynsarmy/sociallogin/Facebook?s=https://www.lapor.go.id&f=https://www.lapor.go.id" class="btn btn-block btn-facebook mg-b-20">
-            <i class="fa fa-facebook fa-fw"></i> Facebook
-        </a>
-    </div>
-    <div class="col-sm-6">
-        <a href="https://www.lapor.go.id/flynsarmy/sociallogin/Twitter?s=https://www.lapor.go.id&f=https://www.lapor.go.id" class="btn btn-block btn-twitter mg-b-20">
-            <i class="fa fa-twitter fa-fw"></i> Twitter
-        </a>
-    </div>
-    <div class="col-sm-12">
-        <a href="https://www.lapor.go.id/flynsarmy/sociallogin/Google?s=https://www.lapor.go.id&f=https://www.lapor.go.id" class="btn btn-block btn-google mg-b-20">
-            <i class="fa fa-google fa-fw"></i> Google
-        </a>
-    </div>
-</div>                            <h5 class="separator"><span>Atau dengan Email Anda</span></h5>
-                            <div class="form-group">
-                                <label for="userSigninLogin">Email, No. telp, atau username</label>
-                                <input
-                                    name="login"
-                                    type="text"
-                                    class="form-control"
-                                    id="userSigninLogin"
-                                    tabindex="1"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <a href="https://www.lapor.go.id/forgot-password" class="pull-right">Lupa password?</a>
-                                <label for="userSigninPassword">Password</label>
-                                <input
-                                    name="password"
-                                    type="password"
-                                    autocomplete="off"
-                                    class="form-control"
-                                    id="userSigninPassword"
-                                    tabindex="2"
-                                    required>
-                            </div>
-                            <div id="google-captcha"></div>
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block" data-attach-loading
-                                
-                                >Masuk</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer clearfix" style="text-align: center">
-                    Anda belum memiliki akun?<br><a class="btn btn-link" href="https://www.lapor.go.id/account/register">Daftar Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-        <div class="modal fade" id="modalMap">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-center">Pilih Lokasi</h4>
-            </div>
-            <div class="modal-body pd-0">
-                <input type="hidden" data-toggle="locationMarkerLatitude">
-                <input type="hidden" data-toggle="locationMarkerLongitude">
-                <div class="location-marker"><img src="https://www.lapor.go.id/themes/lapor/assets/images/complaint-marker.png" alt="" height="70"></div>
-
-                <div class="location-name bg-warning pd-10 text-ellipsis">
-                    <span data-toggle="locationName">Geser map untuk mendapatkan lokasi yang anda inginkan</span>
-                </div>
-                <div id="mapLocation"><center class="pd-10">Silahkan aktifkan fitur pelacakan lokasi Anda pada browser</center></div>
-            </div>
-            <div class="modal-footer">
-                <div class="text-center">
-                    <button class="btn btn-default" data-dismiss="modal">Tutup</button>
-                    <button class="btn btn-danger" data-dismiss="modal" data-toggle="removeLocation">Hapus Lokasi</button>
-                    <button class="btn btn-info" data-dismiss="modal">Pilih Lokasi</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        
 
 
         <div class="loadedcontentmodal"></div>

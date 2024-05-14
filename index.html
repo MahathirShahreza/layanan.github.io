@@ -38,8 +38,6 @@
 
 <body class="index-page">
 
-  
-
   <main class="main">
 
     <header id="header" class="header d-flex align-items-center fixed-top">
@@ -50,7 +48,7 @@
   
         <nav id="navmenu" class="navmenu">
           <ul>
-            
+            <!-- Navigation items can be added here -->
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -68,34 +66,33 @@
           <h1 data-aos="fade-up" class="">Layanan Pengaduan <span>Diskominfotik Sumbar</span></h1>
           <p></p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="login.html" class="btn-get-started">Login</a>
+            <a href="#" class="btn-get-started" id="loginBtn">Login</a>
             <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><span></span></a>
             <a href="register.html" class="btn-get-started">Sign Up</a>
           </div>
           <img src="assets/img/hero-services-img.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
         </div>
       </div>
-
     </section><!-- /Hero Section -->
 
-    
+    <!-- Modal Structure -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <a href="login.html" class="modal-btn user-login">Login as User</a>
+        <a href="loginadmin.html" class="modal-btn">Login as Admin</a>
+      </div>
+    </div>
 
   </main>
 
   <footer id="footer" class="footer position-relative">
-
-    
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">QuickStart</strong><span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-
   </footer>
 
   <!-- Scroll Top -->
@@ -113,6 +110,30 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Custom JS for Modal -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var modal = document.getElementById("loginModal");
+      var btn = document.getElementById("loginBtn");
+      var span = document.getElementsByClassName("close")[0];
+
+      btn.onclick = function(event) {
+        event.preventDefault();
+        modal.style.display = "block";
+      }
+
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    });
+  </script>
 
 </body>
 

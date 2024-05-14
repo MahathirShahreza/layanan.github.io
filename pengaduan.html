@@ -96,51 +96,37 @@
 <nav id="leftMenu" class="navmenu navmenu-default navmenu-inverse navmenu-fixed-left offcanvas" role="navigation">
 	<ul class="nav navmenu-nav">
 		            <li role="presentation" class="  ">
-                            <a href="pengaduan.html" >
-                    Pengaduan!
+                            <a href="pengaduan.html" ><u>
+                    Pengaduan!</u>
                 </a>
             
                     </li>
                 <li role="presentation" class="  ">
                             <a href="aspirasi.html" >
-                    <u>Aspirasi!</u>
+                    Aspirasi!
+                </a>
+            
+                    </li>
+                </li>
+                <li role="presentation" class="  ">
+                            <a href="survey.html" >
+                    Survey!
                 </a>
             
                     </li>
                     <li role="presentation" class="  ">
-                        <a href="survey.html" >
-                Survey!
+                        <a href="index.html" >
+                Logout!
             </a>
         
                 </li>
-                <li role="presentation" class="  ">
-                    <a href="index.html" >
-            Logout!
-        </a>
-    
-            </li>
                     		
 	</ul>
 </nav>
 
 
 <header class="navbar-fixed-top navbar-inverse ">
-	<div class="notice-bar download-android-app visible-sm visible-xs hidden">
-	    <div class="">
-	        <div class="col-xs-12 col-sm-12 icon-playstore hidden">
-                <a href="https://play.google.com/store/apps/details?id=com.deptech.lapor&referrer=utm_source%3Dwebsite%26utm_medium%3Dlapor.go.id%26anid%3Dadmob" target="_blank" >
-                    <img src="https://www.lapor.go.id/themes/lapor/assets/images/icon-playstore.png" alt="" class="img-responsive">
-                </a>
-                Lapor! Versi Android
-            </div>
-	        <div class="col-xs-12 col-sm-12 icon-appstore hidden">
-                <a href="https://click.google-analytics.com/redirect?tid=UA-146892450-1&url=https%3A%2F%2Fitunes.apple.com%2Fid%2Fapp%2Fsp4n-lapor%2Fid1486554343&aid=com.deptech.lapor&idfa={idfa}&cs=website&cm=lapor.go.id&anid=admob&hash=md5" target="_blank" >
-                    <img src="https://www.lapor.go.id/themes/lapor/assets/images/icon-appstore.png" alt="" class="img-responsive">
-                </a>
-                Lapor! Versi iOS
-            </div>
-	    </div>
-	</div>
+	
 	
 	<div class="container">
 		<div class="navbar-header">
@@ -149,22 +135,17 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
-			</button>
-
-			
-
-			
+			</button>			
 					</div>
 
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-left navbar-primary">
-                <li role="presentation" class="  ">
+                <li role="presentation" class="">
                     <a href="#" class="modalTrigger" data-toggle="modal" data-target="#modalPengaduan">
                         LAPOR Diskominfotik Sumbar
                     </a>
                 </li>
-				            
-                    							</ul>
+            </ul>
 
 						<div class="nav navbar-nav navbar-right mg-l-10  hidden-sm">
 				<a href="index.html" class="btn navbar-btn pull-right btn-outline-white">
@@ -174,11 +155,11 @@
 			<ul class="nav navbar-nav navbar-right ">
 
                 <li class="nav-login">
-					<a href="pengaduan.html" data-toggle="" data-target="#">PENGADUAN!</a>
+					<a href="pengaduan.html" data-toggle="" data-target="#"><u>PENGADUAN!</u></a>
 				</li>
 				
 								<li class="nav-login">
-					<a href="aspirasi.html" data-toggle="" data-target="#"><u>ASPIRASI!</u></a>
+					<a href="aspirasi.html" data-toggle="" data-target="#">ASPIRASI!</a>
 				</li>
                 <li class="nav-login">
 					<a href="survey.html" data-toggle="" data-target="#">SURVEY!</a>
@@ -198,7 +179,7 @@
     <div class="container">
         <div class="block block-aspiration">
             <div class="h2">Layanan Aspirasi dan Pengaduan Dinas Komunikasi, Informatika dan Statistik Sumatera Barat</div>
-            <p>Sampaikan Aspirasi Anda langsung terkait instansi pemerintah berwenang</p>
+            <p>Sampaikan laporan Anda langsung terkait instansi pemerintah berwenang</p>
                         <hr>
         </div>
     </div>
@@ -219,21 +200,29 @@
 
     <form method="POST" action="https://www.lapor.go.id" accept-charset="UTF-8" data-request="complaint::onCreate" class="complaint-form" data-request-flash=""><input name="_session_key" type="hidden" value="NjoIsGfq4ONipPrHvoKT1h9f0OyLNCH4u2l9hBzJ"><input name="_token" type="hidden" value="FUYn2whwXsqgfnpZaqrafSPmMxlHGCy8oRDh76wV">
         <div class="complaint-form-box">
-            <div class="select-complaint">Sampaikan Laporan Aspirasi Anda</div>
+            <div class="select-complaint">Sampaikan Laporan Pengaduan Anda</div>
             
         </div>
         <div class="complaint-help">
-            Perhatikan Cara Menyampaikan <span id="classfication_name">Aspirasi</span> Yang Baik dan Benar
-            <a attr-speach="Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar" href="#modalAspirasi" data-toggle="modal" class="modalTrigger" id="modalToggler" data-modal-name="modalAspirasi" data-target="#bannerformmodal"><img attr-speach="Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar" alt="info-complaint" class="info-complaint" src="https://www.lapor.go.id/themes/lapor/assets/images/info.svg" ></a>
+            Perhatikan Cara Menyampaikan <span id="classfication_name">Pengaduan</span> Yang Baik dan Benar
+            <a attr-speach="Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar" href="#modalPengaduan" data-toggle="modal" class="modalTrigger" id="modalToggler" data-modal-name="modalPengaduan" data-target="#bannerformmodal"><img attr-speach="Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar" alt="info-complaint" class="info-complaint" src="https://www.lapor.go.id/themes/lapor/assets/images/info.svg" ></a>
         </div>
-       
         <div class="complaint-form-category">
             <input attr-speach="Ketik Judul Laporan Anda" type="text" name="title" class="form-control" placeholder="Ketik Judul Laporan Anda *" required></textarea>
         </div>
         <div class="complaint-form-category">
             <textarea attr-speach="Ketik Isi Laporan Anda" name="content" id="" rows="6" class="form-control textarea-flex autosize" placeholder="Ketik Isi Laporan Anda *" required></textarea>
         </div>
-        
+        <div class="complaint-form-box p-5px" id="date_incident">
+            <div class="form-group">
+                <div class='input-group date'>
+                    <input attr-speach="Pilih Tanggal Kejadian" type='text' id="date_of_incident" name="date_of_incident" required class="form-control input-doi" placeholder="Pilih Tanggal Kejadian *" autocomplete="off">
+                    <span class="input-group-addon">
+                        <span class="fa fa-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
         <div attr-speach="Ketik Lokasi Kejadian" class="complaint-form-category">
             <select class="form-control" name="location_id" id="location_id" required>
                 <option value="" disabled selected>Pilih Lokasi Kejadian *</option>
@@ -552,7 +541,7 @@
                         $(".complaint-form").submit();
                         button_submit.removeClass('oc-loading');
                         Swal.fire({
-                            title: 'Laporan Aspirasi telah dikirim ke Diskominfotik',
+                            title: 'Laporan Pengaduan telah dikirim ke Diskominfotik',
                             icon: 'success',
                             confirmButtonText: 'OK'
                         });
@@ -569,7 +558,7 @@
             $(".complaint-form").submit();
             button_submit.removeClass('oc-loading');
             Swal.fire({
-                title: 'Laporan Aspirasi telah dikirim ke Diskominfotik',
+                title: 'Laporan Pengaduan telah dikirim ke Diskominfotik',
                 icon: 'success',
                 confirmButtonText: 'OK'
             });
@@ -877,32 +866,6 @@
 
         
         
-        <div class="modal fade" id="modalMap">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-center">Pilih Lokasi</h4>
-            </div>
-            <div class="modal-body pd-0">
-                <input type="hidden" data-toggle="locationMarkerLatitude">
-                <input type="hidden" data-toggle="locationMarkerLongitude">
-                <div class="location-marker"><img src="https://www.lapor.go.id/themes/lapor/assets/images/complaint-marker.png" alt="" height="70"></div>
-
-                <div class="location-name bg-warning pd-10 text-ellipsis">
-                    <span data-toggle="locationName">Geser map untuk mendapatkan lokasi yang anda inginkan</span>
-                </div>
-                <div id="mapLocation"><center class="pd-10">Silahkan aktifkan fitur pelacakan lokasi Anda pada browser</center></div>
-            </div>
-            <div class="modal-footer">
-                <div class="text-center">
-                    <button class="btn btn-default" data-dismiss="modal">Tutup</button>
-                    <button class="btn btn-danger" data-dismiss="modal" data-toggle="removeLocation">Hapus Lokasi</button>
-                    <button class="btn btn-info" data-dismiss="modal">Pilih Lokasi</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
         <div class="loadedcontentmodal"></div>

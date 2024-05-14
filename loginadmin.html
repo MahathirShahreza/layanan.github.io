@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" href="assets/img/Coat_of_arms_of_West_Sumatra.svg.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/img/Coat_of_arms_of_West_Sumatra.svg.png" sizes="16x16">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -91,9 +91,7 @@
                         <div class="col-12">
                             <button class="btn btn-primary w-100" type="button" onclick="login()">Login</button>
                         </div>
-                        <div class="col-12">
-                            <p class="small mb-0">Don't have an account? <a href="register.html">Create an account</a></p>
-                        </div>
+                        
                     </form>
                 </div>
             </div>
@@ -105,8 +103,9 @@
           
             <script>
               var users = [
-                  { username: "admin", password: "passwordadmin" },
-                  { username: "admin", password: "adminjajaja" }
+              { username: "mahathiradmin", password: "mahathirpasswordadmin" },
+              { username: "admin", password: "passwordadmin" },
+                  { username: "admin13", password: "adminjajaja" }
                   // tambahkan lebih banyak pengguna jika diperlukan
               ];
       
@@ -118,7 +117,7 @@
                   for (var i = 0; i < users.length; i++) {
                       if (users[i].username === username && users[i].password === password) {
                           alert("Login successful!");
-                          window.location.href = "index.html"; // Arahkan ke halaman dashboard
+                          window.location.href = "https://www.instagram.com/mahathirshahreza/"; // Arahkan ke halaman dashboard
                           return; // Exit the function if login is successful
                       }
                   }

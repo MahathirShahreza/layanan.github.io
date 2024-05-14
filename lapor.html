@@ -96,8 +96,8 @@
 <nav id="leftMenu" class="navmenu navmenu-default navmenu-inverse navmenu-fixed-left offcanvas" role="navigation">
 	<ul class="nav navmenu-nav">
 		            <li role="presentation" class="  ">
-                            <a href="lapor.html" ><u>
-                    Pengaduan!</u>
+                            <a href="pengaduan.html" >
+                    Pengaduan!
                 </a>
             
                     </li>
@@ -114,28 +114,19 @@
                 </a>
             
                     </li>
+                    <li role="presentation" class="  ">
+                        <a href="index.html" >
+                Logout!
+            </a>
+        
+                </li>
                     		
 	</ul>
 </nav>
 
 
 <header class="navbar-fixed-top navbar-inverse ">
-	<div class="notice-bar download-android-app visible-sm visible-xs hidden">
-	    <div class="">
-	        <div class="col-xs-12 col-sm-12 icon-playstore hidden">
-                <a href="https://play.google.com/store/apps/details?id=com.deptech.lapor&referrer=utm_source%3Dwebsite%26utm_medium%3Dlapor.go.id%26anid%3Dadmob" target="_blank" >
-                    <img src="https://www.lapor.go.id/themes/lapor/assets/images/icon-playstore.png" alt="" class="img-responsive">
-                </a>
-                Lapor! Versi Android
-            </div>
-	        <div class="col-xs-12 col-sm-12 icon-appstore hidden">
-                <a href="https://click.google-analytics.com/redirect?tid=UA-146892450-1&url=https%3A%2F%2Fitunes.apple.com%2Fid%2Fapp%2Fsp4n-lapor%2Fid1486554343&aid=com.deptech.lapor&idfa={idfa}&cs=website&cm=lapor.go.id&anid=admob&hash=md5" target="_blank" >
-                    <img src="https://www.lapor.go.id/themes/lapor/assets/images/icon-appstore.png" alt="" class="img-responsive">
-                </a>
-                Lapor! Versi iOS
-            </div>
-	    </div>
-	</div>
+	
 	
 	<div class="container">
 		<div class="navbar-header">
@@ -144,20 +135,17 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
-			</button>
-
-			
-
-			
+			</button>			
 					</div>
 
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-left navbar-primary">
-                <li role="presentation" class="  ">
-                    <a href="#" >LAPOR Diskominfotik Sumbar  </a>
+                <li role="presentation" class="">
+                    <a href="#" class="modalTrigger" data-toggle="modal" data-target="#modalPengaduan">
+                        LAPOR Diskominfotik Sumbar
+                    </a>
                 </li>
-				            
-                    							</ul>
+            </ul>
 
 						<div class="nav navbar-nav navbar-right mg-l-10  hidden-sm">
 				<a href="index.html" class="btn navbar-btn pull-right btn-outline-white">
@@ -167,7 +155,7 @@
 			<ul class="nav navbar-nav navbar-right ">
 
                 <li class="nav-login">
-					<a href="lapor.html" data-toggle="" data-target="#"><u>PENGADUAN!</u></a>
+					<a href="pengaduan.html" data-toggle="" data-target="#">PENGADUAN!</a>
 				</li>
 				
 								<li class="nav-login">
@@ -181,6 +169,17 @@
 					</div>
 	</div>
 </header>
+<div class="modal fade how-to" id="modalPengaduan" tabindex="-1" role="dialog" aria-labelledby="modalPengaduan" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header" style="padding: 15px;">
+                <button type="button" class="close" style="top: 11px;" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">PANDUAN PENGISIAN PENGADUAN</h4>
+            </div>
+            <img src="https://www.lapor.go.id/themes/lapor/assets/images/how-to-pengaduan.jpg" width="100%">
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
 	function googleTranslateElementInit() {
 	  new google.translate.TranslateElement({pageLanguage: 'id'}, 'google_translate_element');
@@ -210,218 +209,7 @@
             <div class="col-md-8 col-md-offset-2 mg-b-40">
                                     
 
-    <form method="POST" action="https://www.lapor.go.id" accept-charset="UTF-8" data-request="complaint::onCreate" class="complaint-form" data-request-flash=""><input name="_session_key" type="hidden" value="NjoIsGfq4ONipPrHvoKT1h9f0OyLNCH4u2l9hBzJ"><input name="_token" type="hidden" value="FUYn2whwXsqgfnpZaqrafSPmMxlHGCy8oRDh76wV">
-        <div class="complaint-form-box">
-            <div class="select-complaint">Sampaikan Laporan Pengaduan Anda</div>
-            
-        </div>
-        <div class="complaint-help">
-            Perhatikan Cara Menyampaikan <span id="classfication_name">Pengaduan</span> Yang Baik dan Benar
-            <a attr-speach="Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar" href="#modalPengaduan" data-toggle="modal" class="modalTrigger" id="modalToggler" data-modal-name="modalPengaduan" data-target="#bannerformmodal"><img attr-speach="Perhatikan Cara Menyampaikan Pengaduan Yang Baik dan Benar" alt="info-complaint" class="info-complaint" src="https://www.lapor.go.id/themes/lapor/assets/images/info.svg" ></a>
-        </div>
-        <div class="complaint-form-category">
-            <input attr-speach="Ketik Judul Laporan Anda" type="text" name="title" class="form-control" placeholder="Ketik Judul Laporan Anda *" required></textarea>
-        </div>
-        <div class="complaint-form-category">
-            <textarea attr-speach="Ketik Isi Laporan Anda" name="content" id="" rows="6" class="form-control textarea-flex autosize" placeholder="Ketik Isi Laporan Anda *" required></textarea>
-        </div>
-        <div class="complaint-form-box p-5px" id="date_incident">
-            <div class="form-group">
-                <div class='input-group date'>
-                    <input attr-speach="Pilih Tanggal Kejadian" type='text' id="date_of_incident" name="date_of_incident" required class="form-control input-doi" placeholder="Pilih Tanggal Kejadian *" autocomplete="off">
-                    <span class="input-group-addon">
-                        <span class="fa fa-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div attr-speach="Ketik Lokasi Kejadian" class="complaint-form-category">
-            <select class="form-control" name="location_id" id="location_id" required>
-                <option value="" disabled selected>Pilih Lokasi Kejadian *</option>
-                <option value="Kota Padang">Kota Padang</option>
-                <option value="Kabupaten Agam">Kabupaten Agam</option>
-                <option value="Kabupaten Dharmasraya">Kabupaten Dharmasraya</option>
-                <option value="Kabupaten Kepulauan Mentawai">Kabupaten Kepulauan Mentawai</option>
-                <option value="Kabupaten Lima Puluh Kota">Kabupaten Lima Puluh Kota</option>
-                <option value="Kabupaten Padang Pariaman">Kabupaten Padang Pariaman</option>
-                <option value="Kabupaten Pasaman">Kabupaten Pasaman</option>
-                <option value="	Kabupaten Pasaman Barat">	Kabupaten Pasaman Barat</option>
-                <option value="Kabupaten Pesisir Selatan">Kabupaten Pesisir Selatan</option>
-                <option value="	Kabupaten Sijunjung">	Kabupaten Sijunjung</option>
-                <option value="	Kabupaten Solok">	Kabupaten Solok</option>
-                <option value="Kabupaten Solok Selatan">Kabupaten Solok Selatan</option>
-                <option value="	Kabupaten Tanah Datar">	Kabupaten Tanah Datar</option>
-                <option value="	Kota Bukittinggi">	Kota Bukittinggi</option>
-                <option value="Kota Padang Panjang">Kota Padang Panjang</option>
-                <option value="Kota Pariaman	">Kota Pariaman	</option>
-                <option value="	Kota Payakumbuh">	Kota Payakumbuh</option>
-                <option value="	Kota Sawahlunto">	Kota Sawahlunto</option>
-                <option value="	Kota Solok">	Kota Solok</option>
-                <!-- Tambahkan opsi untuk kota dan kabupaten lain di Sumatera Barat sesuai kebutuhan -->
-            </select>
-        </div>
-        <div attr-speach="Ketik Instansi Tujuan" class="complaint-form-category">
-            <select class="form-control" name="suggestion_institution_id" id="select_institution_id" required>
-                <option value="" disabled selected>Pilih Instansi Tujuan *</option>
-                <option value="Dinas Pendidikan Sumatera Barat">Dinas Pendidikan Sumatera Barat</option>
-                <option value="Dinas Kesehatan Sumatera Barat">Dinas Kesehatan Sumatera Barat</option>
-                <option value="Dinas Pekerjaan Umum dan Penataan Ruang Sumatera Barat">Dinas Pekerjaan Umum dan Penataan Ruang Sumatera Barat</option>
-                <option value="Dinas Perhubungan Sumatera Barat">Dinas Perhubungan Sumatera Barat</option>
-                <option value="Dinas Pariwisata dan Kebudayaan Sumatera Barat">Dinas Pariwisata dan Kebudayaan Sumatera Barat</option>
-                <option value="Dinas Sosial Sumatera Barat">Dinas Sosial Sumatera Barat</option>
-                <option value="Dinas Perdagangan dan Perindustrian Sumatera Barat">Dinas Perdagangan dan Perindustrian Sumatera Barat</option>
-                <option value="Dinas Lingkungan Hidup Sumatera Barat">Dinas Lingkungan Hidup Sumatera Barat</option>
-                <option value="Dinas Komunikasi dan Informatika Sumatera Barat">Dinas Komunikasi dan Informatika Sumatera Barat</option>
-                <option value="Dinas Kependudukan dan Pencatatan Sipil Sumatera Barat">Dinas Kependudukan dan Pencatatan Sipil Sumatera Barat</option>
-                <option value="Dinas Koperasi dan UKM Sumatera Barat">Dinas Koperasi dan UKM Sumatera Barat</option>
-                <option value="Dinas Arsip dan Perpustakaan Sumatera Barat">Dinas Arsip dan Perpustakaan Sumatera Barat</option>
-                <option value="Dinas Pertanian dan Ketahanan Pangan Sumatera Barat">Dinas Pertanian dan Ketahanan Pangan Sumatera Barat</option>
-                <option value="Dinas Kelautan dan Perikanan Sumatera Barat">Dinas Kelautan dan Perikanan Sumatera Barat</option>
-                <option value="Dinas Perumahan dan Permukiman Sumatera Barat">Dinas Perumahan dan Permukiman Sumatera Barat</option>
-                <option value="Dinas Pemuda dan Olahraga Sumatera Barat">Dinas Pemuda dan Olahraga Sumatera Barat</option>
-                <option value="Dinas Kearsipan dan Perpustakaan Sumatera Barat">Dinas Kearsipan dan Perpustakaan Sumatera Barat</option>
-                <option value="Dinas Pengendalian Penduduk dan Keluarga Berencana Sumatera Barat">Dinas Pengendalian Penduduk dan Keluarga Berencana Sumatera Barat</option>
-                <option value="Dinas Kependudukan dan Catatan Sipil Sumatera Barat">Dinas Kependudukan dan Catatan Sipil Sumatera Barat</option>
-                <option value="UPTD Pendidikan Sumatera Barat">UPTD Pendidikan Sumatera Barat</option>
-                <option value="UPTD Kesehatan Sumatera Barat">UPTD Kesehatan Sumatera Barat</option>
-                <option value="UPTD Pekerjaan Umum dan Penataan Ruang Sumatera Barat">UPTD Pekerjaan Umum dan Penataan Ruang Sumatera Barat</option>
-                <option value="UPTD Perhubungan Sumatera Barat">UPTD Perhubungan Sumatera Barat</option>
-                <!-- Tambahkan UPTD lain di Sumatera Barat sesuai kebutuhan -->
-                <!-- Tambahkan instansi lain di Sumatera Barat sesuai kebutuhan -->
-            </select>
-        </div>
-        
-                <div attr-speach="Pilih Kategori Laporan Anda" class="complaint-form-category">
-            <select id="select_categories" class="select-tree-view" placeholder="Pilih Kategori Laporan Anda" name="category_id"></select>
-        </div>
-
-        <div class="form-group">
-            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-            <input type="hidden" name="action" value="validate_captcha">
-        </div>
-
-        <div class="complaint-form-attachments">
-            
-    <div
-    class="responsiv-uploader-fileupload style-file-multi is-multi "
-    data-control="fileupload"
-    data-template="#uploaderTemplatefileUploader"
-    data-unique-id="fileUploader"
-    data-file-types=".jpg,.jpeg,.bmp,.png,.webp,.gif,.svg,.js,.map,.ico,.css,.less,.scss,.ics,.odt,.doc,.docx,.ppt,.pptx,.pdf,.swf,.txt,.xml,.ods,.xls,.xlsx,.eot,.woff,.woff2,.ttf,.flv,.wmv,.mp3,.ogg,.wav,.avi,.mov,.mp4,.mpeg,.webm,.mkv,.rar,.xml,.zip">
-
-    <!-- Field placeholder -->
-    <input type="hidden" name="_uploader[attachments]" value="" />
-
-    <!-- Upload Button -->
-    <button type="button" class="ui button btn btn-default oc-icon-upload upload-button">
-        Upload Lampiran (max 10MB)
-    </button>
-
-    <!-- Existing files -->
-    <div class="upload-files-container">
-            </div>
-</div>
-
-<!-- Template for new files -->
-<script type="text/template" id="uploaderTemplatefileUploader">
-    <div class="upload-object dz-preview dz-file-preview">
-        <div class="icon-container">
-            <img data-dz-thumbnail src="https://www.lapor.go.id/plugins/responsiv/uploader/assets/images/upload.png" />
-        </div>
-        <div class="info">
-            <h4 class="filename">
-                <span data-dz-name></span>
-            </h4>
-            <p class="size" data-dz-size></p>
-            <p class="error"><span data-dz-errormessage></span></p>
-        </div>
-        <div class="meta">
-            <a
-                href="javascript:;"
-                class="upload-remove-button"
-                data-request="fileUploader::onRemoveAttachment"
-                data-request-confirm="Are you sure?"
-                >&times;</a>
-            <div class="progress-bar"><span class="upload-progress" data-dz-uploadprogress></span></div>
-        </div>
-    </div>
-</script>
-
-        </div>
-        <div class="complaint-form-footer">
-            <div class="row-flex flex-align-between">
-                <div class="footer-left">
-                    <a attr-speach="Upload Lampiran" href="#" data-toggle="slidetoggle" data-target=".complaint-form-attachments">
-                        <label attr-speach="Upload Lampiran" class="label label-primary">0</label>
-                        <i attr-speach="Upload Lampiran" class="fa fa-fw fa-paperclip"></i> <span attr-speach="Upload Lampiran" class="label-attachment"  data-toggle="tooltip" data-placement="top" data-title="Upload lampiran pendukung laporan Anda">Upload Lampiran</span>
-                    </a>
-
-                    <!-- <a href="javascript:void(0);" data-toggle="modal" data-target="#modalMap" data-name="location">
-                        <i class="fa fa-fw fa-map-marker"></i> <span data-toggle="tooltip" data-placement="top"><span data-toggle="locationName">Lokasi</span></span>
-                    </a> -->
-                </div>
-
-                <div class="footer-right text-right">
-                    <div class="checkbox checkbox-primary checkbox-circle checkbox-inline text-left" data-toggle="tooltip" data-placement="top" data-title="Nama Anda tidak akan terpublikasi pada laporan">
-                        <input attr-speach="Anonim" id="anonim" class="styled" type="checkbox" name="is_anonymous">
-
-                        <label attr-speach="Anonim" for="anonim">
-                            Anonim
-                        </label>
-                    </div>
-
-                    <div class="checkbox checkbox-primary checkbox-circle checkbox-inline text-left" data-toggle="tooltip" data-placement="top" data-title="Laporan Anda tidak dapat dilihat oleh publik">
-                        <input attr-speach="Rahasia" id="Rahasia" class="styled" type="checkbox" name="is_secret" >
-
-                        <label attr-speach="Rahasia" for="Rahasia">
-                            Rahasia
-                        </label>
-                    </div>
-
-                    <!-- HELP Button -->
-
-                    <input type="hidden" name="latitude" data-toggle="currentLatitude">
-                    <input type="hidden" name="longitude" data-toggle="currentLongitude">
-                    <input type="hidden" name="origin_latitude">
-                    <input type="hidden" name="origin_longitude">
-                                        <a attr-speach="LAPOR" class="btn btn-primary" id="submit-complaint" data-attach-loading>LAPOR!</a>            </div>
-            </div>
-        </div>
-    </form>
-
-    <div class="modal fade how-to" id="modalPengaduan" tabindex="-1" role="dialog" aria-labelledby="modalPengaduan" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="padding: 15px;">
-                    <button type="button" class="close" style="top: 11px;" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">PANDUAN PENGISIAN PENGADUAN</h4>
-                </div>
-                <img src="https://www.lapor.go.id/themes/lapor/assets/images/how-to-pengaduan.jpg" width="100%">
-            </div>
-        </div>
-    </div>
-    <div class="modal fade how-to" id="modalAspirasi" tabindex="-1" role="dialog" aria-labelledby="modalAspirasi" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="padding: 15px;">
-                    <button type="button" class="close" style="top: 11px;" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">PANDUAN PENGISIAN ASPIRASI</h4>
-                </div>
-                <img src="https://www.lapor.go.id/themes/lapor/assets/images/how-to-aspirasi.jpg" width="100%">
-            </div>
-        </div>
-    </div>
-    <div class="modal fade how-to" id="modalPermintaanInformasi" tabindex="-1" role="dialog" aria-labelledby="modalPermintaanInformasi" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" style="padding: 15px;">
-                    <button type="button" class="close" style="top: 11px;" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">PANDUAN PENGISIAN PERMINTAAN INFORMASI</h4>
-                </div>
-                <img src="https://www.lapor.go.id/themes/lapor/assets/images/how-to-permintaan-informasi.jpg" width="100%">
-            </div>
-        </div>
-    </div>
+    
 
 <script src="https://www.lapor.go.id/themes/lapor/assets/select2/js/select2.min.js"></script>
 <script src="https://www.lapor.go.id/themes/lapor/assets/select2/js/select2totree.js"></script>
@@ -867,101 +655,7 @@
 </script>
 
         
-        <form method="POST" action="https://www.lapor.go.id" accept-charset="UTF-8" data-request="laporAuth::onSignin" data-request-update="&#039;captcha-login&#039;: &#039;#google-captcha&#039;"><input name="_session_key" type="hidden" value="NjoIsGfq4ONipPrHvoKT1h9f0OyLNCH4u2l9hBzJ"><input name="_token" type="hidden" value="FUYn2whwXsqgfnpZaqrafSPmMxlHGCy8oRDh76wV">
-    <div class="modal fade" id="modalLogin">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title text-center">MASUK</h4>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h5 class="separator"><span>Gunakan Akun Media Sosial Anda</span></h5>
-<div class="row">
-    <div class="col-sm-6">
-        <a href="https://www.lapor.go.id/flynsarmy/sociallogin/Facebook?s=https://www.lapor.go.id&f=https://www.lapor.go.id" class="btn btn-block btn-facebook mg-b-20">
-            <i class="fa fa-facebook fa-fw"></i> Facebook
-        </a>
-    </div>
-    <div class="col-sm-6">
-        <a href="https://www.lapor.go.id/flynsarmy/sociallogin/Twitter?s=https://www.lapor.go.id&f=https://www.lapor.go.id" class="btn btn-block btn-twitter mg-b-20">
-            <i class="fa fa-twitter fa-fw"></i> Twitter
-        </a>
-    </div>
-    <div class="col-sm-12">
-        <a href="https://www.lapor.go.id/flynsarmy/sociallogin/Google?s=https://www.lapor.go.id&f=https://www.lapor.go.id" class="btn btn-block btn-google mg-b-20">
-            <i class="fa fa-google fa-fw"></i> Google
-        </a>
-    </div>
-</div>                            <h5 class="separator"><span>Atau dengan Email Anda</span></h5>
-                            <div class="form-group">
-                                <label for="userSigninLogin">Email, No. telp, atau username</label>
-                                <input
-                                    name="login"
-                                    type="text"
-                                    class="form-control"
-                                    id="userSigninLogin"
-                                    tabindex="1"
-                                    required>
-                            </div>
-                            <div class="form-group">
-                                <a href="https://www.lapor.go.id/forgot-password" class="pull-right">Lupa password?</a>
-                                <label for="userSigninPassword">Password</label>
-                                <input
-                                    name="password"
-                                    type="password"
-                                    autocomplete="off"
-                                    class="form-control"
-                                    id="userSigninPassword"
-                                    tabindex="2"
-                                    required>
-                            </div>
-                            <div id="google-captcha"></div>
-                            <div class="form-group">
-                                <button class="btn btn-primary btn-block" data-attach-loading
-                                
-                                >Masuk</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer clearfix" style="text-align: center">
-                    Anda belum memiliki akun?<br><a class="btn btn-link" href="https://www.lapor.go.id/account/register">Daftar Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-        <div class="modal fade" id="modalMap">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title text-center">Pilih Lokasi</h4>
-            </div>
-            <div class="modal-body pd-0">
-                <input type="hidden" data-toggle="locationMarkerLatitude">
-                <input type="hidden" data-toggle="locationMarkerLongitude">
-                <div class="location-marker"><img src="https://www.lapor.go.id/themes/lapor/assets/images/complaint-marker.png" alt="" height="70"></div>
-
-                <div class="location-name bg-warning pd-10 text-ellipsis">
-                    <span data-toggle="locationName">Geser map untuk mendapatkan lokasi yang anda inginkan</span>
-                </div>
-                <div id="mapLocation"><center class="pd-10">Silahkan aktifkan fitur pelacakan lokasi Anda pada browser</center></div>
-            </div>
-            <div class="modal-footer">
-                <div class="text-center">
-                    <button class="btn btn-default" data-dismiss="modal">Tutup</button>
-                    <button class="btn btn-danger" data-dismiss="modal" data-toggle="removeLocation">Hapus Lokasi</button>
-                    <button class="btn btn-info" data-dismiss="modal">Pilih Lokasi</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        
 
 
         <div class="loadedcontentmodal"></div>

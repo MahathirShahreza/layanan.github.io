@@ -176,3 +176,24 @@
 document.getElementById("loginButton").addEventListener("click", function() {
   document.getElementById("loginForm").style.display = "block";
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  var modal = document.getElementById("loginModal");
+  var btn = document.getElementById("loginBtn");
+  var span = document.getElementsByClassName("close")[0];
+
+  btn.onclick = function(event) {
+      event.preventDefault();
+      modal.style.display = "block";
+  }
+
+  span.onclick = function() {
+      modal.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+});

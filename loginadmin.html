@@ -103,34 +103,66 @@
           
             <script>
               var users = [
-              { username: "mahathiradmin", password: "mahathirpasswordadmin" },
-              { username: "admin", password: "passwordadmin" },
-                  { username: "admin13", password: "adminjajaja" }
-                  // tambahkan lebih banyak pengguna jika diperlukan
-              ];
-      
-              function login() {
-                  var username = document.getElementById("yourUsername").value;
-                  var password = document.getElementById("yourPassword").value;
-                  
-                  // Loop through the users array to check if the provided username and password match any user
-                  for (var i = 0; i < users.length; i++) {
-                      if (users[i].username === username && users[i].password === password) {
-                          alert("Login successful!");
-                          window.location.href = "https://www.instagram.com/mahathirshahreza/"; // Arahkan ke halaman dashboard
-                          return; // Exit the function if login is successful
-                      }
-                  }
-                  
-                  // If no matching user is found, show the pop up
-                  var popup = document.getElementById("popup");
-                  popup.style.display = "block";
-              }
+    { username: "mahathiradmin", password: "mahathirpasswordadmin" },
+    { username: "admin", password: "passwordadmin" },
+    { username: "admin13", password: "adminjajaja" },
+    { username: "admindiskominfotik", password: "passworddiskominfotik" },
+    { username: "admindinaskesehatan", password: "passworddinaskesehatan" },
+    { username: "admindinaspendidikan", password: "passworddinaspendidikan" },
+    { username: "admindinaspertanian", password: "passworddinaspertanian" },
+    { username: "admindinasperhubungan", password: "passworddinasperhubungan" },
+    { username: "admindinaspariwisata", password: "passworddinaspariwisata" },
+    { username: "admindinasperdagangan", password: "passworddinasperdagangan" },
+    { username: "admindinasperindustrian", password: "passworddinasperindustrian" },
+    { username: "admindinaskehutanan", password: "passworddinaskehutanan" },
+    { username: "admindinasenergi", password: "passworddinasenergi" }
+    // tambahkan lebih banyak pengguna jika diperlukan
+];
 
-              function closePopup() {
-                  var popup = document.getElementById("popup");
-                  popup.style.display = "none";
-              }
+function login() {
+    var username = document.getElementById("yourUsername").value;
+    var password = document.getElementById("yourPassword").value;
+    
+    // Check for the special users
+    var specialUsers = [
+        { username: "admindinaskesehatan", password: "passworddinaskesehatan" },
+        { username: "admindinaspendidikan", password: "passworddinaspendidikan" },
+        { username: "admindinaspertanian", password: "passworddinaspertanian" },
+        { username: "admindinasperhubungan", password: "passworddinasperhubungan" },
+        { username: "admindinaspariwisata", password: "passworddinaspariwisata" },
+        { username: "admindinasperdagangan", password: "passworddinasperdagangan" },
+        { username: "admindinasperindustrian", password: "passworddinasperindustrian" },
+        { username: "admindinaskehutanan", password: "passworddinaskehutanan" },
+        { username: "admindinasenergi", password: "passworddinasenergi" }
+    ];
+
+    for (var i = 0; i < specialUsers.length; i++) {
+        if (username === specialUsers[i].username && password === specialUsers[i].password) {
+            alert("Login successful!");
+            window.location.href = "https://mahathirshahreza.github.io/admininstansiain.github.io/"; // Arahkan ke halaman GitHub
+            return; // Exit the function if login is successful
+        }
+    }
+
+    // Loop through the general users array to check if the provided username and password match any user
+    for (var i = 0; i < users.length; i++) {
+        if (users[i].username === username && users[i].password === password) {
+            alert("Login successful!");
+            window.location.href = "https://mahathirshahreza.github.io/admindiskominfotik.github.io/"; // Arahkan ke halaman dashboard
+            return; // Exit the function if login is successful
+        }
+    }
+    
+    // If no matching user is found, show the pop up
+    var popup = document.getElementById("popup");
+    popup.style.display = "block";
+}
+
+function closePopup() {
+    var popup = document.getElementById("popup");
+    popup.style.display = "none";
+}
+
             </script>
             <div>
 
